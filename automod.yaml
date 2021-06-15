@@ -1,0 +1,21 @@
+--- # Sets music flair
+    moderators_exempt: false
+    domain: [youtube.com, youtu.be, soundcloud.com]
+    set_flair: "Music"
+
+--- # Sets Question flair
+    moderators_exempt: false
+    title: [question]
+    set_flair: "Question"
+
+--- # Checks user submission of links for correct format
+    moderators_exempt: false
+    domain: [youtube.com, youtu.be, soundcloud.com]
+    ~title (regex): ['\[[\w -]+\]'] # "\w" checks for characters and numbers, "-" allows for dashes
+    action: remove
+    comment: |
+        This post was removed because you did not follow the proper title format: Track Title - Artist Name [Record Label] (Year Published)
+
+        Please resubmit your link with the proper format! If you have any questions, don't hesitate to ask.
+
+        Thanks! 
